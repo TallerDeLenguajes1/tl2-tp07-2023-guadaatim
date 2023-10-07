@@ -1,3 +1,4 @@
+using EspacioAccesoADatos;
 using EspacioManejoDeTareas;
 using EspacioTareas;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -16,7 +17,8 @@ public class TareasController : ControllerBase
     public TareasController(ILogger<TareasController> logger)
     {
         this.logger = logger;
-        manejoDeTareas = new ManejoDeTareas();
+        AccesoADatos accesoADatos = new AccesoADatos();
+        manejoDeTareas = new ManejoDeTareas(accesoADatos);
     }
 
     [HttpPost("AddTarea")]

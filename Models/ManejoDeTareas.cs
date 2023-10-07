@@ -7,9 +7,9 @@ public class ManejoDeTareas
 {
     private AccesoADatos accesoADatos;
 
-    public ManejoDeTareas()
+    public ManejoDeTareas(AccesoADatos accesoADatos)
     {
-        accesoADatos = new AccesoADatos();
+        this.accesoADatos = accesoADatos;
     }
 
     public bool AgregarTarea(Tarea tareaNueva)
